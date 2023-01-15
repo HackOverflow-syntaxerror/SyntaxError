@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/index.css"> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan your travel</title>
+</head>
+<body>
+    
+    <div class="hero">
+        <div class="bb"></div>
+        <nav>
+            <h1 class="logo">PlanYourTrip</h1>
+            <h1 class="v">Travel with Friends</h1>
+            <div id="testing" class="c1"></div>
+    
+    <script src="static/script.js"></script>
+        </nav>
+        
+    </div>
+    <div class="home2">
+        <a href="index.html" style="color: rgb(205, 241, 248);">
+          HOME
+        </a>
+      </div>
+    <form action="/test2" method="post">    
+        <section class="v1">
+        <div align="center">From</div>
+        <input style="align-items: center;" type="text" name="from" id="from" required>
+        </section>
+        <section class="v2">
+        <div align="center">To</div>
+        <input style="align-items: center;"type="text" name="to" id="to" required>
+        </section>
+        <section class="v3">
+        <input style="align-items: center;" type="text" name="inter1" id="inter1" placeholder="intermediate station 1 " value="null">
+        </section>
+        <section class="v4">
+        <input style="align-items: center;" type="text" name="inter2" id="inter2" placeholder="intermediate station 2 " value="null">
+        </section>
+        <section class="v5">
+        <input style="align-items: center;" type="text" name="inter3" id="inter3" placeholder="intermediate station 3 " value="null">
+        </section>
+        <section class="v6">
+        <input style="align-items: center;" type="text" name="inter4" id="inter4" placeholder="intermediate station 4 " value="null">
+        </section>
+        <button type="submit" class="btn">FIND</button>
+    </form>
+    <div class="done">
+
+    <% if(data){ %>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Phone_No</th>
+                <th>Travel_Date</th>
+                <th>Email</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Inter station1</th>
+                <th>Inter station2</th>
+                <th>Inter station3</th>
+                <th>Inter station4</th>
+            </tr>
+            <% data.forEach(function(book) { %>
+                <tr>
+                    <td><%= book.Name %></td>
+                    <td><%= book.ID %></td>
+                    <td><%= book.Phone_No%></td>
+                    <td><%= book.Travel_Date%></td>
+                    <td><%= book.Email%></td>
+                    <td><%= book.Start %></td>
+                    <td><%= book.END %></td>
+                    <td><%= book.Inter1 %></td>
+                    <td><%= book.Inter2 %></td>
+                    <td><%= book.Inter3 %></td>
+                    <td><%= book.Inter3 %></td>
+                </tr>
+                 
+                    <% }); %> 
+        </table>
+        <% } else{ %>  
+        <div></div>
+    <% } %>
+</div>
+ 
+
+
+    
+
+
+</body>    
+    <script src="static/script.js"></script>
+</html>
